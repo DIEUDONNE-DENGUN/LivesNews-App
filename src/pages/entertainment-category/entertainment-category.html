@@ -1,0 +1,48 @@
+
+<ion-content fullscreen>
+  
+    <h6 class="feed-item" padding>
+        Top Entertainment News headlines
+    </h6>
+     <ion-card *ngFor="let news of news_feeds; let j=index"  class="card">
+    
+       <ion-item >
+         <ion-avatar item-left>
+           <img src="{{news.source.feed_source_avatar}}" (error)="onFeedSourceImageError(news,j)"  alt="{{news.source}}"/>
+         </ion-avatar>
+         <h2 class="feed-item">{{news.source.name}}</h2>
+         <small>{{news.publishedAt}}</small>
+         <p text-wrap>{{news.title}}</p>
+       </ion-item>
+   
+       <img  (error)="onFeedImageError(news, j)" class="feed-image" src="{{news.urlToImage}}" />
+   
+       <ion-card-content *ngIf="news.description">
+         {{news.description}}
+          ...
+       </ion-card-content>
+   
+       <ion-row>
+         <ion-col col-4>
+           <button ion-button icon-left clear small class="feed-item">
+             <ion-icon name="star"></ion-icon>
+             <div>Favorite</div>
+           </button>
+         </ion-col>
+         <ion-col col-4>
+           <button ion-button icon-left clear small class="feed-item">
+             <ion-icon name="share"></ion-icon>
+             <div>Share</div>
+           </button>
+         </ion-col >
+         <ion-col  col-4>
+           <button ion-button icon-left clear small class="feed-item">
+             <ion-icon name="more"></ion-icon>
+             &nbsp;<div>&nbsp;View</div>
+           </button>
+         </ion-col>
+       </ion-row>
+   
+     </ion-card>
+   </ion-content>
+   

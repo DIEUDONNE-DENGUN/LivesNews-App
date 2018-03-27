@@ -2,8 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 // import {SuperTabsController} from "ionic2-super-tabs";
-import { SuperTabsController } from '../../ionic2-super-tabs/src';
-import {SuperTabs} from "../../ionic2-super-tabs/src/components/super-tabs";
+// import { SuperTabsController } from '../../ionic2-super-tabs/src';
 
 @IonicPage({
   segment: 'home/:type'
@@ -13,30 +12,30 @@ import {SuperTabs} from "../../ionic2-super-tabs/src/components/super-tabs";
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  @ViewChild(SuperTabs) superTabs: SuperTabs;
-
-  page1: any = 'Page1Page';
-  page2: any = 'Page2Page';
-  page3: any = 'Page3Page';
+  general='GeneralCategoryPage';
+  entertainment='EntertainmentCategoryPage';
+  health='HealthCategoryPage';
+  sport='SportsCategoryPage';
+  science='ScienceCategoryPage';
+  technology='TechnologyCategoryPage';
 
   showIcons: boolean = true;
   showTitles: boolean = true;
-  pageTitle: string = 'Full Height';
+  pageTitle: string = 'LiveNews';
 
-  constructor(public navCtrl: NavController, private navParams: NavParams, private superTabsCtrl: SuperTabsController) {
-    const type = navParams.get('type');
-    switch (type) {
-      case 'icons-only':
-        this.showTitles = false;
-        this.pageTitle += ' - Icons only';
-        break;
+  constructor(public navCtrl: NavController, private navParams: NavParams,) {
+    // const type = navParams.get('type');
+    // switch (type) {
+    //   case 'icons-only':
+    //     this.showTitles = false;
+    //     this.pageTitle += ' - Icons only';
+    //     break;
 
-      case 'titles-only':
-        this.showIcons = false;
-        this.pageTitle += ' - Titles only';
-        break;
-    }
+    //   case 'titles-only':
+    //     this.showIcons = false;
+    //     this.pageTitle += ' - Titles only';
+    //     break;
+    // }
   }
 
   ngAfterViewInit() {

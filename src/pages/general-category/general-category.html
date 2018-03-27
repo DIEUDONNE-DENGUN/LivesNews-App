@@ -1,0 +1,176 @@
+<ion-content fullscreen>
+
+  <h6 class="feed-item" padding>
+    Top News Headlines for you
+  </h6>
+  <ion-card *ngFor="let news of news_feeds; let j=index" class="card">
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="{{news.source.feed_source_avatar}}" (error)="onFeedSourceImageError(news,j)" alt="{{news.source}}" />
+      </ion-avatar>
+      <h6 class="feed-item">{{news.source.name}}</h6>
+      <small>{{news.publishedAt}}</small>
+      <br/>
+      <p text-wrap>{{news.title}}</p>
+    </ion-item>
+
+    <img (error)="onFeedImageError(news, j)" class="feed-image" src="{{news.urlToImage}}" />
+
+    <ion-card-content>
+      {{news.description}} ...
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button icon-left clear small class="feed-item">
+          <ion-icon name="star"></ion-icon>
+          <div>Like</div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button icon-left clear small class="feed-item" (click)="shareNewsActionSheet(news)">
+          <ion-icon name="share"></ion-icon>
+          <div>Share</div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button icon-left clear small class="feed-item" (click)="showNewsDetailsURL(news.url)">
+          <ion-icon name="more"></ion-icon>
+          &nbsp;
+          <div>&nbsp;View</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+
+  <!-- Second category of news casts -->
+  <ion-list *ngIf="news_feeds_cat_2">
+
+    <ion-item *ngFor="let news of news_feeds_cat_2; let j=index">
+
+      <ion-thumbnail item-start>
+        <img (error)="onFeedImageError(news, j)" src="{{news.urlToImage}}" />
+      </ion-thumbnail>
+      <div item-end>
+        <h2 class="feed-item">{{news.source.name}}</h2>
+        <small>{{news.publishedAt}}</small>
+        <br/>
+        <p *ngIf="news.description">{{news.description}}....</p>
+        <ion-row>
+          <ion-col col-4>
+            <button ion-button icon-left clear small class="feed-item">
+              <ion-icon name="star"></ion-icon>
+              <div>Like</div>
+            </button>
+          </ion-col>
+          <ion-col col-4>
+            <button ion-button icon-left clear small class="feed-item" (click)="shareNewsActionSheet(news)">
+              <ion-icon name="share"></ion-icon>
+              <div>Share</div>
+            </button>
+          </ion-col>
+          <ion-col col-4>
+            <button ion-button icon-left clear small class="feed-item" (click)="showNewsDetailsURL(news.url)">
+              <ion-icon name="more"></ion-icon>
+              &nbsp;
+              <div>&nbsp;View</div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-item>
+  </ion-list>
+
+  <!-- Third catgory of news casts -->
+  <ion-card *ngFor="let news of news_feeds_cat_4; let j=index" class="card">
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="{{news.source.feed_source_avatar}}" (error)="onFeedSourceImageError(news,j)" alt="{{news.source}}" />
+      </ion-avatar>
+      <h6 class="feed-item">{{news.source.name}}</h6>
+      <small>{{news.publishedAt}}</small>
+      <br/>
+      <p text-wrap>{{news.title}}</p>
+    </ion-item>
+
+    <img (error)="onFeedImageError(news, j)" class="feed-image" src="{{news.urlToImage}}" />
+
+    <ion-card-content>
+      {{news.description}} ...
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button icon-left clear small class="feed-item">
+          <ion-icon name="star"></ion-icon>
+          <div>Like</div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button icon-left clear small class="feed-item" (click)="shareNewsActionSheet(news)">
+          <ion-icon name="share"></ion-icon>
+          <div>Share</div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button icon-left clear small class="feed-item" (click)="showNewsDetailsURL(news.url)">
+          <ion-icon name="more"></ion-icon>
+          &nbsp;
+          <div>&nbsp;View</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+  <!-- Fourth category of news casts -->
+  <ion-list *ngIf="news_feeds_cat_3">
+
+    <ion-item *ngFor="let news of news_feeds_cat_4; let j=index">
+
+      <ion-row>
+        <div col-8>
+          <ion-avatar item-left>
+            <img src="{{news.source.feed_source_avatar}}" (error)="onFeedSourceImageError(news,j)" alt="{{news.source}}" />
+          </ion-avatar>
+          <h2 text-wrap class="feed-item">{{news.source.name}}</h2>
+          <small>{{news.publishedAt}}</small>
+          <br/>
+          <small text-wrap *ngIf="news.description">{{news.description}}...</small>
+
+        </div>
+        <!-- Thunbnail image goes to the right -->
+        <ion-thumbnail col-4>
+          <img (error)="onFeedImageError(news, j)" src="{{news.urlToImage}}" />
+        </ion-thumbnail>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button icon-left clear small class="feed-item">
+            <ion-icon name="star"></ion-icon>
+            <div>Like</div>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-left clear small class="feed-item" (click)="shareNewsActionSheet(news)">
+            <ion-icon name="share"></ion-icon>
+            <div>Share</div>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-left clear small class="feed-item" (click)="showNewsDetailsURL(news.url)">
+            <ion-icon name="more"></ion-icon>
+            &nbsp;
+            <div>&nbsp;View</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

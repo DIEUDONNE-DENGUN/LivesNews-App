@@ -1,0 +1,84 @@
+
+<ion-content fullscreen>
+  
+    <h6 class="feed-item"  padding>
+        Top Health News
+    </h6>
+
+    <ion-list *ngIf="news_feeds">
+     <ion-item *ngFor="let news of news_feeds; let j=index;">
+
+      <ion-thumbnail item-start>
+          <img  (error)="onFeedImageError(news, j)" src="{{news.urlToImage}}"/>
+      </ion-thumbnail>
+    <div item-end>
+      <h2 class="feed-item">{{news.source.name}}</h2>
+      <small>{{news.publishedAt}}</small><br/>
+      <p *ngIf="news.description">{{news.description}}...</p>
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button icon-left clear small class="feed-item">
+            <ion-icon name="star"></ion-icon>
+            <div>Like</div>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-left clear small class="feed-item">
+            <ion-icon name="share"></ion-icon>
+            <div>Share</div>
+          </button>
+        </ion-col >
+        <ion-col  col-4>
+          <button ion-button icon-left clear small class="feed-item">
+            <ion-icon name="more"></ion-icon>
+            &nbsp;<div>&nbsp;View</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    
+     </ion-item>
+
+    </ion-list>
+     <!-- <ion-card *ngFor="let news of news_feeds"  class="card">
+    
+       <ion-item >
+         <ion-avatar item-left>
+           <img src="https://avatars.io/facebook/{{news.source.feed_source_avatar}}"  alt="{{news.source}}"/>
+         </ion-avatar>
+         <h2 class="feed-item">{{news.source.name}}</h2>
+         <small>November 5, 1955</small>
+         <p text-wrap>{{news.title}}</p>
+       </ion-item>
+   
+       <img class="feed-image" src="{{news.urlToImage}}" />
+   
+       <ion-card-content>
+         {{news.description}}
+          ...
+       </ion-card-content>
+   
+       <ion-row>
+         <ion-col col-4>
+           <button ion-button icon-left clear small class="feed-item">
+             <ion-icon name="star"></ion-icon>
+             <div>Favorite</div>
+           </button>
+         </ion-col>
+         <ion-col col-4>
+           <button ion-button icon-left clear small class="feed-item">
+             <ion-icon name="share"></ion-icon>
+             <div>Share</div>
+           </button>
+         </ion-col >
+         <ion-col  col-4>
+           <button ion-button icon-left clear small class="feed-item">
+             <ion-icon name="more"></ion-icon>
+             &nbsp;<div>&nbsp;View</div>
+           </button>
+         </ion-col>
+       </ion-row>
+   
+     </ion-card> -->
+   </ion-content>
+   

@@ -1,10 +1,17 @@
-<ion-split-pane>
-  <ion-menu [content]="content">
-    <ion-content>
-      <ion-list>
-        <button ion-item menuClose *ngFor="let item of menuItems" (click)="openPage(item)">{{ item.name }}</button>
+
+  <ion-menu [content]="content" color="main">
+    <ion-content class="menu-header">
+      
+        <div>
+           <img class="sidemenu-image" src="https://avatars.io/instagram/NEWS"/>
+        </div>
+        <hr/>
+        <ion-list class="menu-header">
+        
+            <button class="menu-header" ion-item menuClose *ngFor="let item of menuItems" (click)="openPage(item)">{{ item.name }}</button>
+
       </ion-list>
     </ion-content>
   </ion-menu>
-  <ion-nav [root]="rootPage" [rootParams]="rootParams" main #content></ion-nav>
-</ion-split-pane>
+  <ion-nav [root]="rootPage" [rootParams]="rootParams"  #content></ion-nav>
+
