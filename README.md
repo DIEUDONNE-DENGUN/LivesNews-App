@@ -26,9 +26,9 @@ Getting Started
 
  Project Snapshots
 
-        https://github.com/DIEUDONNE-DENGUN/LivesNews-App/blob/master/hom-live.PNG
+        ![alt text](https://github.com/DIEUDONNE-DENGUN/LivesNews-App/blob/master/hom-live.PNG)
 
-        https://github.com/DIEUDONNE-DENGUN/LivesNews-App/blob/master/general.PNG
+        ![alt text](https://github.com/DIEUDONNE-DENGUN/LivesNews-App/blob/master/general.PNG)
 
 Add additional notes about how to deploy this on a live system
 Built With
