@@ -11,7 +11,7 @@ export class NewsProvider {
   public loading: any;
   country: String="us"; //hold on the default 
   base_url: String= "https://newsapi.org/v2/";   //hold base url of the news API 
-  access_token: String= "902bf27e4c9540f6b851ad229e1457f0";  //hold acces token to News Api
+  access_token: String= "";  //hold acces token to News Api.... Replace this with your own Newsapi.org acces token
   constructor(public http: HttpClient, public iab: InAppBrowser,public browserTab:BrowserTab,private actionSheetCtrl: ActionSheetController,public storage : Storage ,private alert: AlertController, private toast: ToastController, private loader: LoadingController) {
     
   }
