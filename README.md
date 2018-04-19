@@ -27,6 +27,7 @@ Getting Started
  Project Snapshots
 
    ![alt text](https://github.com/DIEUDONNE-DENGUN/LivesNews-App/blob/master/hom-live.PNG?raw=true)
+   ![alt text](https://github.com/DIEUDONNE-DENGUN/LivesNews-App/blob/master/share.PNG?raw=true)
 
    ![alt text](https://github.com/DIEUDONNE-DENGUN/LivesNews-App/blob/master/general.PNG?raw=true)
    ![alt text](https://github.com/DIEUDONNE-DENGUN/LivesNews-App/blob/master/live-home.PNG?raw=true)
